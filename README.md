@@ -17,7 +17,7 @@ Graph visualisation symfony bundle
 
 ### add bundle
 
-    composer require yarooze/alchemilla-bundlels
+    composer require yarooze/alchemilla-bundle
     
     php bin/console assets:install
 
