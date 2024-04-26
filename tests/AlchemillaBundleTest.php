@@ -6,7 +6,7 @@ use Yarooze\AlchemillaBundle\DependencyInjection\AlchemillaExtension;
 use Yarooze\AlchemillaBundle\AlchemillaBundle;
 use PHPUnit\Framework\TestCase;
 
-class YaroozeAlchemillaBundleTest extends TestCase
+class AlchemillaBundleTest extends TestCase
 {
     public function testGetContainerExtension(): void
     {
