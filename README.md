@@ -2,7 +2,6 @@
 Graph visualisation symfony bundle
 
 
-
 ## Install
 
 ### Add repository to `composer.json`
@@ -24,4 +23,29 @@ Graph visualisation symfony bundle
 ### remove bundle
 
     composer remove yarooze/alchemilla-bundle
+
+
+## JS
+
+### Version 0.* Alchemy plugin
+    composer: "yarooze/alchemilla-bundle": "0.0.0"
+
+
+
+    <link rel="stylesheet" href="{{ asset('bundles/alchemilla/vendor.css') }}" />
+    <link rel="stylesheet" href="{{ asset('bundles/alchemilla/alchemy.css') }}" />
+    <script type="text/javascript" src="{{ asset('bundles/alchemilla/vendor.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/alchemilla/alchemy.js') }}"></script>
+
+    <div class="alchemy" id="alchemy"></div>
+    
+    <script src="http://cdn.graphalchemist.com/alchemy.min.js"></script>
+    <script type="text/javascript">
+            var config = {
+                dataSource: 'data/charlize.json',
+                };
+    
+            alchemy = new Alchemy(config)
+    </script>
+
 
