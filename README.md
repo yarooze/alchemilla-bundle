@@ -24,6 +24,15 @@ Graph visualisation symfony bundle
 
     composer remove yarooze/alchemilla-bundle
 
+### Versions
+#### Initial
+    "yarooze/alchemilla-bundle": "~0.0"
+
+#### Develop
+    "yarooze/alchemilla-bundle": "dev-develop"
+
+#### Main
+    "yarooze/alchemilla-bundle": "dev-main"
 
 ## JS
 
@@ -47,5 +56,8 @@ Graph visualisation symfony bundle
     
             alchemy = new Alchemy(config)
     </script>
+
+
+
 
 
