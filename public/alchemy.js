@@ -1,8 +1,8 @@
 (function() {
   "Alchemy.js is a graph drawing application for the web.\nCopyright (C) 2014  GraphAlchemist, Inc.\n\nThis program is free software: you can redistribute it and/or modify\nit under the terms of the GNU Affero General Public License as published by\nthe Free Software Foundation, either version 3 of the License, or\n(at your option) any later version.\n\nThis program is distributed in the hope that it will be useful,\nbut WITHOUT ANY WARRANTY; without even the implied warranty of\nMERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\nGNU Affero General Public License for more details.\n\nYou should have received a copy of the GNU Affero General Public License\nalong with this program.  If not, see <http://www.gnu.org/licenses/>.\nlets";
   var Alchemy, Clustering, DrawEdge, DrawEdges, DrawNode, DrawNodes, Editor, EditorInteractions, EditorUtils, Layout, root, warnings,
-    __slice = [].slice,
-    __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
+      __slice = [].slice,
+      __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
   Alchemy = (function() {
     function Alchemy(userConf) {
@@ -103,6 +103,9 @@
     Alchemy.prototype.getInst = function(svg) {
       var instNumber;
       instNumber = parseInt(d3.select(svg).attr("alchInst"));
+      if (instNumber < 0) {
+        instNumber = 0;
+      }
       return Alchemy.prototype.instances[instNumber];
     };
 
@@ -1278,7 +1281,22 @@
       data.edges.forEach(function(e) {
         return a.create.edges(e);
       });
-      a.vis = d3.select(conf.divSelector).attr("style", "width:" + (conf.graphWidth()) + "px; height:" + (conf.graphHeight()) + "px; background:" + conf.backgroundColour + ";").append("svg").attr("xmlns", "http://www.w3.org/2000/svg").attr("xlink", "http://www.w3.org/1999/xlink").attr("pointer-events", "all").attr("style", "background:" + conf.backgroundColour + ";").attr("alchInst", Alchemy.prototype.instances.length - 1).on('click', a.interactions.deselectAll).call(a.interactions.zoom(conf.scaleExtent)).on("dblclick.zoom", null).append('g').attr("transform", "translate(" + conf.initialTranslate + ") scale(" + conf.initialScale + ")");
+
+      a.vis = d3
+          .select(conf.divSelector)
+          .attr("style", "width:" + (conf.graphWidth()) + "px; height:" + (conf.graphHeight()) + "px; background:" + conf.backgroundColour + ";")
+          .append("svg")
+          .attr("xmlns", "http://www.w3.org/2000/svg")
+          .attr("xlink", "http://www.w3.org/1999/xlink")
+          .attr("pointer-events", "all")
+          .attr("style", "background:" + conf.backgroundColour + ";")
+          .attr("alchInst", Alchemy.prototype.instances.length > 0 ? Alchemy.prototype.instances.length - 1 : 0)
+          .on('click', a.interactions.deselectAll)
+          .call(a.interactions.zoom(conf.scaleExtent))
+          .on("dblclick.zoom", null)
+          .append('g')
+          .attr("transform", "translate(" + conf.initialTranslate + ") scale(" + conf.initialScale + ")")
+      ;
       a.interactions.zoom().scale(conf.initialScale);
       a.interactions.zoom().translate(conf.initialTranslate);
       a.index = Alchemy.prototype.Index(a);
