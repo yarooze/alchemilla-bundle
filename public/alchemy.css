@@ -497,7 +497,8 @@ defs #arrow path {
 #control-dash-wrapper #control-dash {
   overflow-x: hidden;
   overflow-y: scroll;
-  background-color: transparent;
+  /*background-color: transparent;*/
+  background-color: #666;
   background-image: url("images/maze-black.png");
   padding: 0;
   height: inherit;
@@ -511,7 +512,8 @@ defs #arrow path {
 
 #control-dash-wrapper #dash-toggle {
   z-index: 5;
-  background-color: transparent;
+  /*background-color: transparent;*/
+  background-color: #666;
   background-image: url("images/maze-black.png");
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
