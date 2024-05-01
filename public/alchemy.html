@@ -5,13 +5,13 @@
     <title>Alchemy test</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="vendor.css">
+    <link rel="stylesheet" href="bootstrap-iso.css">
     <link rel="stylesheet" href="alchemy.css">
 </head>
 <body>
 <h1>Alchemy test</h1>
 
-<div class="alchemy" id="alchemy"></div>
+<div class="alchemy bootstrap-iso" id="alchemy"></div>
 
 <script src="vendor.js"></script>
 
@@ -48,7 +48,7 @@
     var alchemy = new Alchemy(config);
 
 
-    window.onload = function() {
+    window.addEventListener('DOMContentLoaded', function() {
         if (window.jQuery) {
             // jQuery is loaded
             // alert("Yeah!");
@@ -60,7 +60,11 @@
             // jQuery is not loaded
             // alert("Doesn't Work");
         }
-    }
+    });
+
+
+
+    // window.onload = function() { }
 
 </script>
 </body>
