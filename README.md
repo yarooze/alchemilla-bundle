@@ -31,21 +31,30 @@ Graph visualisation symfony bundle
     composer: "yarooze/alchemilla-bundle": "0.0.0"
 
 
-
     <link rel="stylesheet" href="{{ asset('bundles/alchemilla/vendor.css') }}" />
     <link rel="stylesheet" href="{{ asset('bundles/alchemilla/alchemy.css') }}" />
     <script type="text/javascript" src="{{ asset('bundles/alchemilla/vendor.js') }}"></script>
     <script type="text/javascript" src="{{ asset('bundles/alchemilla/alchemy.js') }}"></script>
 
-    <div class="alchemy" id="alchemy"></div>
+    <div class="alchemy bootstrap-iso" id="alchemy"></div>
     
     <script src="http://cdn.graphalchemist.com/alchemy.min.js"></script>
     <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function() {    
             var config = {
                 dataSource: 'data/charlize.json',
                 };
     
-            alchemy = new Alchemy(config)
+            alchemy = new Alchemy(config);
+
+            if (window.jQuery) {
+                $('#dash-toggle').click(function () {
+                    $('#control-dash-wrapper').toggleClass('initial');
+                });
+            }            
+
+        });
+            
     </script>
 
 
