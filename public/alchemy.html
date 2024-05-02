@@ -5,30 +5,51 @@
     <title>Alchemy test</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="bootstrap-iso.css">
+    <!-- load separated -->
+    <link rel="stylesheet" href="components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="components/components-font-awesome/css/font-awesome.css">
     <link rel="stylesheet" href="alchemy.css">
+
+    <!-- prepared -->
+    <!--    <link rel="stylesheet" href="bootstrap-iso.css">-->
+    <!--    <link rel="stylesheet" href="alchemy.css">-->
 </head>
 <body>
 <h1>Alchemy test</h1>
 
 <div class="alchemy bootstrap-iso" id="alchemy"></div>
 
-<script src="vendor.js"></script>
-
+<!-- load separated -->
+<script src="components/jquery/dist/jquery.js"></script>
+<script src="components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="components/d3/d3.js"></script>
+<script src="components/lodash/dist/lodash.compat.js"></script>
 <script src="alchemy.js"></script>
+
+<!-- prepared -->
+<!--<script src="vendor.js"></script>-->
+<!--<script src="alchemy.js"></script>-->
+
 <script type="text/javascript">
 
     var some_data =
         {
             "nodes": [
                 {
-                    "id": 1
+                    "id": 1,
+                    "cluster": "a",
+                    "caption": "node 1",
+                    "root": true,
                 },
                 {
-                    "id": 2
+                    "id": 2,
+                    "cluster": "a",
+                    "caption": "node 2",
                 },
                 {
-                    "id": 3
+                    "id": 3,
+                    "cluster": "b",
+                    "caption": "node 3",
                 }
             ],
             "edges": [
@@ -43,7 +64,11 @@
             ]
         };
 
-    var config = {"dataSource": some_data};
+    var config = {
+        "dataSource": some_data,
+        search: 'contains',
+        cluster: true,
+    };
 
     var alchemy = new Alchemy(config);
 
