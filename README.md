@@ -24,6 +24,15 @@ Graph visualisation symfony bundle
 
     composer remove yarooze/alchemilla-bundle
 
+### Versions
+#### Initial
+    "yarooze/alchemilla-bundle": "~0.0"
+
+#### Develop
+    "yarooze/alchemilla-bundle": "dev-develop"
+
+#### Main
+    "yarooze/alchemilla-bundle": "dev-main"
 
 ## JS
 
@@ -31,7 +40,8 @@ Graph visualisation symfony bundle
     composer: "yarooze/alchemilla-bundle": "0.0.0"
 
 
-    <link rel="stylesheet" href="{{ asset('bundles/alchemilla/vendor.css') }}" />
+
+    <link rel="stylesheet" href="{{ asset('bundles/alchemilla/bootstrap-iso.css') }}" />
     <link rel="stylesheet" href="{{ asset('bundles/alchemilla/alchemy.css') }}" />
     <script type="text/javascript" src="{{ asset('bundles/alchemilla/vendor.js') }}"></script>
     <script type="text/javascript" src="{{ asset('bundles/alchemilla/alchemy.js') }}"></script>
@@ -40,21 +50,20 @@ Graph visualisation symfony bundle
     
     <script src="http://cdn.graphalchemist.com/alchemy.min.js"></script>
     <script type="text/javascript">
-        document.addEventListener("DOMContentLoaded", function() {    
-            var config = {
-                dataSource: 'data/charlize.json',
-                };
-    
-            alchemy = new Alchemy(config);
 
-            if (window.jQuery) {
-                $('#dash-toggle').click(function () {
-                    $('#control-dash-wrapper').toggleClass('initial');
-                });
-            }            
+            document.addEventListener("DOMContentLoaded", function() {
 
-        });
-            
+                var config = {
+                    dataSource: 'data/charlize.json',
+                    };
+        
+                alchemy = new Alchemy(config)
+
+            });
+
     </script>
+
+
+
 
 

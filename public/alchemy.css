@@ -113,7 +113,7 @@
   }
 }
 
-svg {
+.alchemy svg {
   position: absolute;
   left: 0;
   cursor: -webkit-grab;
@@ -122,15 +122,15 @@ svg {
   color: #333;
 }
 
-.node {
+.alchemy .node {
   cursor: pointer;
 }
 
-.node text.root {
+.alchemy .node text.root {
   font-size: 32px;
 }
 
-.node text {
+.alchemy .node text {
   display: none;
   fill: white;
   font-weight: 200;
@@ -139,39 +139,39 @@ svg {
   text-shadow: 1px 1px #333, -1px 1px #333, 1px -1px #333, -1px -1px #333;
 }
 
-.node.active {
+.alchemy .node.active {
   opacity: 1;
 }
 
-.node.active.selected text {
+.alchemy .node.active.selected text {
   display: block;
 }
 
-.node.active:hover text {
+.alchemy .node.active:hover text {
   display: block;
 }
 
-defs #arrow path {
+.alchemy defs #arrow path {
   stroke: #CCC;
   stroke-opacity: 0.2;
   fill: #CCC;
   opacity: 1;
 }
 
-.edge text {
+.alchemy .edge text {
   stroke-width: 0;
 }
 
-.edge .edge-handler {
+.alchemy .edge .edge-handler {
   fill: none;
   stroke: none;
 }
 
-.edge .edge-line {
+.alchemy .edge .edge-line {
   fill: none;
 }
 
-.edge.active text {
+.alchemy .edge.active text {
   display: none;
   fill: white;
   font-weight: 200;
@@ -180,17 +180,17 @@ defs #arrow path {
   z-index: 1000;
 }
 
-.edge.active:hover,
-.edge.active.selected {
+.alchemy .edge.active:hover,
+.alchemy .edge.active.selected {
   cursor: pointer;
 }
 
-.edge.active:hover text,
-.edge.active.selected text {
+.alchemy .edge.active:hover text,
+.alchemy .edge.active.selected text {
   display: block;
 }
 
-.edge.active.highlight text {
+.alchemy .edge.active.highlight text {
   display: block;
 }
 
@@ -233,9 +233,9 @@ defs #arrow path {
   border: none;
 }
 
-.fa-caret-right,
-.fa-caret-down,
-.fa-search {
+.alchemy .fa-caret-right,
+.alchemy .fa-caret-down,
+.alchemy .fa-search {
   margin: 0 5px;
   color: #e89619;
 }
@@ -497,7 +497,8 @@ defs #arrow path {
 #control-dash-wrapper #control-dash {
   overflow-x: hidden;
   overflow-y: scroll;
-  background-color: transparent;
+  /*background-color: transparent;*/
+  background-color: #666;
   background-image: url("images/maze-black.png");
   padding: 0;
   height: inherit;
@@ -511,7 +512,8 @@ defs #arrow path {
 
 #control-dash-wrapper #dash-toggle {
   z-index: 5;
-  background-color: transparent;
+  /*background-color: transparent;*/
+  background-color: #666;
   background-image: url("images/maze-black.png");
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
